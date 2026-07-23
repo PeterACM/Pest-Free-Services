@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BUSINESS_INFO } from '../data/pestData';
 import { ShieldCheck, Calendar, PhoneCall, CheckCircle2, ArrowRight, Sparkles, Leaf, Award, Bug, Footprints, ShieldAlert, Wrench, Shield, Check } from 'lucide-react';
+import heroWoodBorerImg from '../assets/images/hero_wood_borer_eco_1784765733472.jpg';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -160,10 +161,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-500 bg-slate-950 group">
               <img 
-                src="/src/assets/images/hero_wood_borer_eco_1784765733472.jpg" 
+                src={heroWoodBorerImg} 
                 alt="Pest Free Services Durban Modern Bio Treatment" 
                 className="w-full h-[420px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = './assets/images/hero_wood_borer_eco_1784765733472.jpg';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
 

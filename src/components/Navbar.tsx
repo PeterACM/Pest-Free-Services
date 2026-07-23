@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { PhoneCall, Menu, X, MessageSquare, ShieldCheck, Sparkles, Phone } from 'lucide-react';
+import pestFreeLogo from '../assets/images/Pestfreelogo.png';
 
 interface NavbarProps {
   currentPage: PageView;
@@ -39,10 +40,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           aria-label="Pest Free Services Home"
         >
           <img 
-            src="/Pestfreelogo.png" 
+            src={pestFreeLogo} 
             alt="Pest Free Services Logo" 
             className="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain transition-transform group-hover:scale-105"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              // Fallback to public path if ESM fails
+              (e.currentTarget as HTMLImageElement).src = './Pestfreelogo.png';
+            }}
           />
         </button>
 

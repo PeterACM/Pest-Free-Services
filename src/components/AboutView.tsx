@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { BUSINESS_INFO } from '../data/pestData';
 import { ShieldCheck, Award, Leaf, Users, CheckCircle2, MapPin, Building2, FileText, PhoneCall, Sparkles } from 'lucide-react';
+import woodBorerTreatmentImg from '../assets/images/wood_borer_treatment_1784765757008.jpg';
 
 interface AboutViewProps {
   onOpenBooking: () => void;
@@ -47,10 +48,13 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
             <div className="lg:col-span-5 relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-600 bg-slate-950">
                 <img 
-                  src="/src/assets/images/wood_borer_treatment_1784765757008.jpg" 
+                  src={woodBorerTreatmentImg} 
                   alt="Wood Borer Treatment Restored Window Durban" 
                   className="w-full h-[400px] object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = './assets/images/wood_borer_treatment_1784765757008.jpg';
+                  }}
                 />
               </div>
               <div className="mt-4 p-5 rounded-2xl bg-emerald-900 text-white border-2 border-emerald-500 shadow-xl text-xs">

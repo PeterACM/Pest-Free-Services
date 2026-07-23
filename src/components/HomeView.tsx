@@ -4,6 +4,7 @@ import { Hero } from './Hero';
 import { SERVICES_DATA, TESTIMONIALS_DATA, BLOG_ARTICLES, BUSINESS_INFO } from '../data/pestData';
 import { PageView } from '../types';
 import { ShieldAlert, Bug, Footprints, Bed, Sparkles, Wind, ShieldCheck, Wrench, CheckCircle2, XCircle, ArrowRight, Award, PhoneCall, Star, FileText, Calendar } from 'lucide-react';
+import grantArnoldFounderImg from '../assets/images/grant_arnold_founder_1784765744784.jpg';
 
 interface HomeViewProps {
   onNavigate: (page: PageView) => void;
@@ -230,10 +231,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="lg:col-span-5 relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-500 bg-slate-900">
                 <img 
-                  src="/src/assets/images/grant_arnold_founder_1784765744784.jpg" 
+                  src={grantArnoldFounderImg} 
                   alt="Grant Arnold Founder Pest Free Services Durban" 
                   className="w-full h-[400px] object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = './assets/images/grant_arnold_founder_1784765744784.jpg';
+                  }}
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-red-700 text-white p-5 rounded-2xl shadow-2xl border-2 border-white max-w-xs hidden sm:block">

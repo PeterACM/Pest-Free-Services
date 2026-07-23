@@ -2,6 +2,7 @@ import React from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { ShieldCheck, MapPin, Phone, Mail, Clock, Leaf, Award, HeartHandshake } from 'lucide-react';
+import pestFreeLogo from '../assets/images/Pestfreelogo.png';
 
 interface FooterProps {
   onNavigate: (page: PageView) => void;
@@ -17,10 +18,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/Pestfreelogo.png"
+                src={pestFreeLogo}
                 alt="Pest Free Services Logo"
                 className="h-12 w-auto bg-white p-1 rounded-xl shadow-md border border-emerald-400 object-contain"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = './Pestfreelogo.png';
+                }}
               />
             </div>
 
