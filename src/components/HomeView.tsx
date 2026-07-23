@@ -234,9 +234,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   src={grantArnoldFounderImg} 
                   alt="Grant Arnold Founder Pest Free Services Durban" 
                   className="w-full h-[400px] object-cover"
-                  referrerPolicy="no-referrer"
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = './assets/images/grant_arnold_founder_1784765744784.jpg';
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = 'grant_arnold_founder_1784765744784.jpg';
+                    }
                   }}
                 />
               </div>

@@ -21,9 +21,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
                 src={pestFreeLogo}
                 alt="Pest Free Services Logo"
                 className="h-12 w-auto bg-white p-1 rounded-xl shadow-md border border-emerald-400 object-contain"
-                referrerPolicy="no-referrer"
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = './Pestfreelogo.png';
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (!target.dataset.triedFallback1) {
+                    target.dataset.triedFallback1 = 'true';
+                    target.src = 'Pestfreelogo.png';
+                  } else if (!target.dataset.triedFallback2) {
+                    target.dataset.triedFallback2 = 'true';
+                    target.src = 'pestfreelogo.png';
+                  } else if (!target.dataset.triedFallback3) {
+                    target.dataset.triedFallback3 = 'true';
+                    target.src = 'logo.png';
+                  }
                 }}
               />
             </div>

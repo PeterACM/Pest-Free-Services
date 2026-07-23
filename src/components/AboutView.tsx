@@ -51,9 +51,12 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
                   src={woodBorerTreatmentImg} 
                   alt="Wood Borer Treatment Restored Window Durban" 
                   className="w-full h-[400px] object-cover"
-                  referrerPolicy="no-referrer"
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = './assets/images/wood_borer_treatment_1784765757008.jpg';
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = 'wood_borer_treatment_1784765757008.jpg';
+                    }
                   }}
                 />
               </div>

@@ -43,10 +43,18 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
             src={pestFreeLogo} 
             alt="Pest Free Services Logo" 
             className="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain transition-transform group-hover:scale-105"
-            referrerPolicy="no-referrer"
             onError={(e) => {
-              // Fallback to public path if ESM fails
-              (e.currentTarget as HTMLImageElement).src = './Pestfreelogo.png';
+              const target = e.currentTarget as HTMLImageElement;
+              if (!target.dataset.triedFallback1) {
+                target.dataset.triedFallback1 = 'true';
+                target.src = 'Pestfreelogo.png';
+              } else if (!target.dataset.triedFallback2) {
+                target.dataset.triedFallback2 = 'true';
+                target.src = 'pestfreelogo.png';
+              } else if (!target.dataset.triedFallback3) {
+                target.dataset.triedFallback3 = 'true';
+                target.src = 'logo.png';
+              }
             }}
           />
         </button>

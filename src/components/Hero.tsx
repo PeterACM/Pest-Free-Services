@@ -164,9 +164,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
                 src={heroWoodBorerImg} 
                 alt="Pest Free Services Durban Modern Bio Treatment" 
                 className="w-full h-[420px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = './assets/images/hero_wood_borer_eco_1784765733472.jpg';
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (!target.dataset.triedFallback) {
+                    target.dataset.triedFallback = 'true';
+                    target.src = 'hero_wood_borer_eco_1784765733472.jpg';
+                  }
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
