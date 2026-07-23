@@ -2,7 +2,7 @@ import React from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { ShieldCheck, MapPin, Phone, Mail, Clock, Leaf, Award, HeartHandshake } from 'lucide-react';
-import pestFreeLogo from '../assets/images/Pestfreelogo.png';
+import pestFreeLogo from '../assets/images/pestfreelogo.png';
 
 interface FooterProps {
   onNavigate: (page: PageView) => void;
@@ -25,10 +25,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
                   const target = e.currentTarget as HTMLImageElement;
                   if (!target.dataset.triedFallback1) {
                     target.dataset.triedFallback1 = 'true';
-                    target.src = 'Pestfreelogo.png';
+                    target.src = 'pestfreelogo.png';
                   } else if (!target.dataset.triedFallback2) {
                     target.dataset.triedFallback2 = 'true';
-                    target.src = 'pestfreelogo.png';
+                    target.src = 'Pestfreelogo.png';
                   } else if (!target.dataset.triedFallback3) {
                     target.dataset.triedFallback3 = 'true';
                     target.src = 'logo.png';
