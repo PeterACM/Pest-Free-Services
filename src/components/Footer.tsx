@@ -25,10 +25,13 @@ export const Footer: React.FC<FooterProps> = () => {
                 const target = e.currentTarget as HTMLImageElement;
                 if (!target.dataset.triedFallback1) {
                   target.dataset.triedFallback1 = 'true';
-                  target.src = 'Pestfreelogo.png';
+                  target.src = '/Pestfreelogo.png';
                 } else if (!target.dataset.triedFallback2) {
                   target.dataset.triedFallback2 = 'true';
-                  target.src = 'pestfreelogo.png';
+                  target.src = '/pestfreelogo.png';
+                } else if (!target.dataset.triedFallback3) {
+                  target.dataset.triedFallback3 = 'true';
+                  target.src = '/logo.png';
                 }
               }}
             />

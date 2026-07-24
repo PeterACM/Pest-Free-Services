@@ -55,7 +55,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
                     const target = e.currentTarget as HTMLImageElement;
                     if (!target.dataset.triedFallback) {
                       target.dataset.triedFallback = 'true';
-                      target.src = 'wood_borer_treatment_1784765757008.jpg';
+                      target.src = '/wood_borer_treatment_1784765757008.jpg';
                     }
                   }}
                 />

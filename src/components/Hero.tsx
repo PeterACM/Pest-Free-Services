@@ -168,7 +168,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
                   const target = e.currentTarget as HTMLImageElement;
                   if (!target.dataset.triedFallback) {
                     target.dataset.triedFallback = 'true';
-                    target.src = 'hero_wood_borer_eco_1784765733472.jpg';
+                    target.src = '/hero_wood_borer_eco_1784765733472.jpg';
                   }
                 }}
               />
