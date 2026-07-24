@@ -18,8 +18,8 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-4 shrink-0">
             <img
-              src={pestFreeLogo}
-              alt="Pestfreelogo"
+              src="/pestfreelogo.png"
+              alt="Pest Free Services Logo"
               className="h-16 sm:h-20 w-auto bg-white p-1.5 rounded-xl shadow-md border border-emerald-400 object-contain"
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;
@@ -28,9 +28,6 @@ export const Footer: React.FC<FooterProps> = () => {
                   target.src = '/Pestfreelogo.png';
                 } else if (!target.dataset.triedFallback2) {
                   target.dataset.triedFallback2 = 'true';
-                  target.src = '/pestfreelogo.png';
-                } else if (!target.dataset.triedFallback3) {
-                  target.dataset.triedFallback3 = 'true';
                   target.src = '/logo.png';
                 }
               }}
