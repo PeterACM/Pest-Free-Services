@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { PhoneCall, Menu, X, MessageSquare, ShieldCheck, Sparkles, Phone } from 'lucide-react';
-import pestFreeLogo from '../assets/images/Pestfreelogo.png';
+import pestFreeLogo from 'pestfreelogo.png';
 
 interface NavbarProps {
   currentPage: PageView;
