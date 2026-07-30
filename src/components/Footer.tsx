@@ -2,7 +2,7 @@ import React from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { MapPin, ShieldCheck } from 'lucide-react';
-import pestFreeLogo from 'pestfreelogo.png';
+const pestFreeLogo = '/Pestfreelogo.png';
 
 interface FooterProps {
   onNavigate: (page: PageView) => void;

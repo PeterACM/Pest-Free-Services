@@ -14,16 +14,16 @@ export const LiveChatWidget: React.FC = () => {
     {
       id: 'welcome-1',
       sender: 'grant',
-      text: "Hello! I'm Grant Arnold, owner of Pest Free Services in Durban. How can I help you with wood-borer, termites, or pest control today?",
+      text: "Hello! Welcome to Pest Free Services in Durban. How can we assist you with wood-borer assessments, termite control, roach warranties, or rodent control today?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
 
   const quickPrompts = [
-    "How does bio wood-borer treatment work without tents?",
-    "Do I need to leave my house during treatment?",
-    "Get an instant quote for my home in Durban",
-    "Emergency snake or gecko control",
+    "Compulsory borer assessment requirements",
+    "How does the Roach Gel 3-month warranty work?",
+    "Rodent control services in Durban",
+    "Sub-contracted wood replacement details",
   ];
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export const LiveChatWidget: React.FC = () => {
       const grantMsg: ChatMessage = {
         id: `grant-${Date.now()}`,
         sender: 'grant',
-        text: data.reply || "Thank you for reaching out! Please call Grant directly at 082 555 7890 for urgent requests.",
+        text: data.reply || `Thank you for reaching out! Please call us directly at ${BUSINESS_INFO.phone} for urgent requests.`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
@@ -74,7 +74,7 @@ export const LiveChatWidget: React.FC = () => {
       const fallbackMsg: ChatMessage = {
         id: `grant-err-${Date.now()}`,
         sender: 'grant',
-        text: "I'm currently assisting another Durban client. Please call Grant directly at 082 555 7890 or use our Online Booking system!",
+        text: `I'm currently assisting another Durban client. Please call us directly at ${BUSINESS_INFO.phone} or use our Online Booking system!`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
       setMessages((prev) => [...prev, fallbackMsg]);
@@ -100,7 +100,7 @@ export const LiveChatWidget: React.FC = () => {
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-emerald-700 animate-pulse"></span>
           </div>
           <div className="hidden sm:block text-left">
-            <p className="text-xs font-extrabold leading-tight">Live Support • Grant</p>
+            <p className="text-xs font-extrabold leading-tight">Live Support</p>
             <p className="text-[10px] text-emerald-200">Pest Free Services Durban</p>
           </div>
         </motion.button>
@@ -121,14 +121,14 @@ export const LiveChatWidget: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <div className="w-10 h-10 rounded-full bg-white text-emerald-900 flex items-center justify-center font-bold text-sm shadow-inner">
-                    GA
+                    PFS
                   </div>
                   <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-emerald-900"></span>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold leading-snug">Grant Arnold</h4>
+                  <h4 className="text-sm font-bold leading-snug">Pest Free Services</h4>
                   <p className="text-[11px] text-emerald-300 flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3 text-emerald-400" /> Founder & Bio Specialist
+                    <ShieldCheck className="w-3 h-3 text-emerald-400" /> Dept. Ag Licensed Team
                   </p>
                 </div>
               </div>
@@ -150,42 +150,42 @@ export const LiveChatWidget: React.FC = () => {
                   className={`flex flex-col ${m.sender === 'user' ? 'items-end' : 'items-start'}`}
                 >
                   <div
-                    className={`max-w-[82%] p-3 rounded-2xl shadow-xs leading-relaxed ${
+                    className={`max-w-[85%] p-3 rounded-2xl ${
                       m.sender === 'user'
-                        ? 'bg-emerald-700 text-white rounded-br-xs'
-                        : 'bg-white text-slate-800 border border-slate-200 rounded-bl-xs'
+                        ? 'bg-emerald-700 text-white rounded-tr-xs shadow-xs'
+                        : 'bg-white text-slate-800 border border-slate-200 shadow-sm rounded-tl-xs'
                     }`}
                   >
-                    <p>{m.text}</p>
+                    <p className="leading-relaxed font-medium">{m.text}</p>
                   </div>
                   <span className="text-[10px] text-slate-400 mt-1 px-1">{m.timestamp}</span>
                 </div>
               ))}
-
               {loading && (
-                <div className="flex items-center gap-2 text-slate-400 text-xs italic p-2">
+                <div className="flex items-center gap-2 text-slate-500 italic text-[11px] p-2 bg-white rounded-xl border border-slate-200 w-fit">
                   <RefreshCw className="w-3.5 h-3.5 animate-spin text-emerald-600" />
-                  <span>Grant is typing...</span>
+                  <span>Pest Free Assistant typing...</span>
                 </div>
               )}
               <div ref={messagesEndRef} />
             </div>
 
             {/* Quick Prompts */}
-            <div className="p-2.5 bg-white border-t border-slate-100 flex flex-wrap gap-1.5">
-              {quickPrompts.map((prompt, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSendMessage(prompt)}
-                  disabled={loading}
-                  className="text-[11px] bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-left transition-colors font-medium truncate max-w-full"
-                >
-                  {prompt}
-                </button>
-              ))}
-            </div>
+            {messages.length < 3 && (
+              <div className="p-2.5 bg-emerald-50 border-t border-emerald-100 flex flex-wrap gap-1.5 text-[11px]">
+                {quickPrompts.map((qp, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleSendMessage(qp)}
+                    className="px-2.5 py-1 bg-white hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-full font-bold transition-colors text-[10px]"
+                  >
+                    {qp}
+                  </button>
+                ))}
+              </div>
+            )}
 
-            {/* Input Bar */}
+            {/* Input Footer */}
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -197,14 +197,13 @@ export const LiveChatWidget: React.FC = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask Grant about pest control..."
-                className="flex-1 p-2.5 text-xs rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 bg-slate-50"
+                placeholder="Ask about pest control or timber assessment..."
+                className="flex-1 p-2.5 rounded-xl border border-slate-300 text-xs focus:outline-hidden focus:ring-2 focus:ring-emerald-600 bg-slate-50 font-medium"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || loading}
-                className="p-2.5 bg-emerald-700 text-white rounded-xl hover:bg-emerald-800 transition-colors disabled:opacity-40"
-                aria-label="Send message"
+                className="p-2.5 bg-red-700 hover:bg-red-800 disabled:opacity-40 text-white rounded-xl shadow-md transition-all shrink-0 cursor-pointer"
               >
                 <Send className="w-4 h-4" />
               </button>

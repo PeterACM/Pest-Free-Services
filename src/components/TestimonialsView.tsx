@@ -21,6 +21,7 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isModalOpen]);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedSuburb, setSelectedSuburb] = useState<string>('All');
@@ -39,7 +40,7 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
     clientName: '',
     suburb: 'Morningside',
     quote: '',
-    serviceType: 'Wood-Borer Treatment',
+    serviceType: 'Wood-Borer Control',
     rating: 5,
   });
 
@@ -76,7 +77,7 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
       clientName: '',
       suburb: 'Morningside',
       quote: '',
-      serviceType: 'Wood-Borer Treatment',
+      serviceType: 'Wood-Borer Control',
       rating: 5,
     });
   };
@@ -84,11 +85,11 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
   // Service options
   const serviceCategories = [
     'All',
-    'Wood-Borer Treatment',
+    'Wood-Borer Control',
     'Cockroach Control',
-    'Bed Bug Treatment',
-    'Snake & Gecko Control',
-    'Handyman Repairs',
+    'Termite Treatment',
+    'Rodent Control',
+    'Wood Replacement Sub-Contractors',
   ];
 
   // Unique suburbs
@@ -136,14 +137,13 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
         if (sortBy === 'rating') {
           return b.rating - a.rating;
         }
-        // default newest
         return b.id.localeCompare(a.id);
       });
   }, [reviews, searchTerm, selectedCategory, selectedSuburb, selectedRating, sortBy, helpfulCounts]);
 
   return (
     <div id="testimonials-view-container" className="space-y-0 bg-white">
-      {/* Header (BACKGROUND: Strong Deep Emerald Green bg-emerald-900) */}
+      {/* Header */}
       <motion.section 
         id="testimonials-header-section" 
         className="py-16 bg-emerald-900 text-white border-b-4 border-emerald-950"
@@ -157,10 +157,10 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
             Verified Durban Feedback
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
-            14+ Years of Real Results & Customer Trust
+            14+ Years of Service Results & Customer Trust
           </h1>
           <p className="text-emerald-100 text-base mt-3 leading-relaxed font-medium">
-            Read authentic reviews from homeowners, flat body corporates, and restaurant owners across North Beach, Umbilo, Morningside, Umhlanga, and Westville.
+            Read authentic reviews from homeowners, body corporates, and commercial clients across North Beach, Umbilo, Morningside, Umhlanga, and Westville.
           </p>
 
           <div className="mt-8 flex justify-center">
@@ -169,13 +169,13 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-xs shadow-xl border border-red-500 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Plus className="w-4 h-4" />
-              <span>Leave Your Feedback for Grant</span>
+              <span>Leave Your Feedback</span>
             </button>
           </div>
         </div>
       </motion.section>
 
-      {/* Case Study Spotlight: Baumann Ave North Beach (BACKGROUND: Deep Dark Slate bg-slate-950) */}
+      {/* Case Study Spotlight: Baumann Ave North Beach */}
       <motion.section 
         id="case-study-section" 
         className="py-16 bg-slate-950 text-white border-b-4 border-emerald-600"
@@ -194,35 +194,35 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
                 </div>
 
                 <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-                  The Baumann Avenue Block of Flats Trial (North Beach, Durban)
+                  The Baumann Avenue Block of Flats Assessment (North Beach, Durban)
                 </h2>
 
                 <p className="text-emerald-100 text-sm sm:text-base leading-relaxed font-medium">
-                  Before a new tenant was scheduled to occupy a borer-damaged flat, Grant Arnold conducted a trial treatment using his non-fumigation bio-friendly formulation. Rather than tenting the entire multi-story building, Grant treated the apartment directly.
+                  Before a new tenant was scheduled to occupy a borer-damaged flat, Pest Free Services conducted a targeted treatment using registered borer control products. Rather than tenting the entire multi-story building, the team treated the accessible apartment directly.
                 </p>
 
                 <div className="p-5 rounded-2xl bg-slate-950 border-2 border-emerald-500 text-xs text-slate-100 space-y-2 shadow-inner">
                   <p className="font-black text-amber-300 uppercase tracking-wide">Site Supervisor Official Report:</p>
                   <p className="italic text-slate-200 text-sm font-medium">
-                    "All wood-borer inside the treated flat were eradicated completely. Dead and dying adult beetles were found outside the unit along the corridor — clear proof the treatment penetrated the timber and repelled pests without tenting!"
+                    "All wood-borer inside the treated flat were eliminated completely. Dead adult beetles were found outside the unit along the corridor — clear proof the treatment penetrated the accessible timber without requiring a tent!"
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-2 text-xs text-amber-300 font-black uppercase tracking-wider">
-                  <span>✓ Independently Verified by UKZN Entomologists</span>
-                  <span>✓ Saved Body Corporate R40,000+ in Tenting Costs</span>
+                  <span>✓ Department of Agriculture Registered Products</span>
+                  <span>✓ Saved Body Corporate Significant Tenting Costs</span>
                 </div>
               </div>
 
               <div className="lg:col-span-4 bg-slate-950 p-6 rounded-2xl border-2 border-emerald-400 text-center space-y-3 shadow-xl">
                 <p className="text-4xl font-black text-amber-300">650+</p>
-                <p className="text-xs font-black text-white uppercase tracking-wider">Durban Households Served</p>
+                <p className="text-xs font-black text-white uppercase tracking-wider">Durban Properties Assessed</p>
                 <p className="text-[11px] text-emerald-200">Continuous operation since CC incorporation on 28 April 2011.</p>
                 <button
                   onClick={onOpenBooking}
                   className="w-full py-3.5 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-xs shadow-lg transition-colors border border-red-500"
                 >
-                  Book Your Inspection
+                  Book Your Assessment
                 </button>
               </div>
             </div>
@@ -256,7 +256,7 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
                 </div>
               </div>
               <p className="text-xs text-emerald-100 font-medium leading-relaxed">
-                100% satisfaction rating across wood-borer, termite, and pest applications in Durban.
+                Proven satisfaction rating across wood-borer, termite, roach, and rodent applications in Durban.
               </p>
             </div>
 
@@ -380,7 +380,7 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
         </div>
       </motion.section>
 
-      {/* Testimonials List Grid (BACKGROUND: Pure White) */}
+      {/* Testimonials List Grid */}
       <motion.section 
         id="reviews-grid-section" 
         className="py-16 bg-white border-b-4 border-emerald-700"
@@ -518,8 +518,8 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-slate-900">Leave Feedback for Grant</h3>
-                  <p className="text-xs text-slate-600 font-medium">Share your experience with Pest Free Services Durban.</p>
+                  <h3 className="text-xl font-black text-slate-900">Leave Feedback for Pest Free Services</h3>
+                  <p className="text-xs text-slate-600 font-medium">Share your experience with our team.</p>
                 </div>
               </div>
 
@@ -555,11 +555,11 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
                     onChange={(e) => setNewReview({ ...newReview, serviceType: e.target.value })}
                     className="w-full p-3 rounded-xl border-2 border-emerald-300 text-sm font-semibold focus:ring-2 focus:ring-red-500 bg-white"
                   >
-                    <option value="Wood-Borer Treatment">Wood-Borer Treatment</option>
+                    <option value="Wood-Borer Control">Wood-Borer Control</option>
                     <option value="Cockroach Control">Cockroach Control</option>
-                    <option value="Bed Bug Treatment">Bed Bug Treatment</option>
-                    <option value="Snake & Gecko Control">Snake & Gecko Control</option>
-                    <option value="Handyman Repairs">Handyman Wooden Repairs</option>
+                    <option value="Termite Treatment">Termite Treatment</option>
+                    <option value="Rodent Control">Rodent Control</option>
+                    <option value="Wood Replacement Sub-Contractors">Wood Replacement Sub-Contractors</option>
                   </select>
                 </div>
 
@@ -590,7 +590,7 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
                     rows={3}
                     value={newReview.quote}
                     onChange={(e) => setNewReview({ ...newReview, quote: e.target.value })}
-                    placeholder="Describe how Grant treated your borer or pest issue..."
+                    placeholder="Describe your pest control or wood replacement experience..."
                     className="w-full p-3 rounded-xl border-2 border-emerald-300 text-sm focus:ring-2 focus:ring-red-500 font-semibold"
                   />
                 </div>
@@ -618,4 +618,3 @@ export const TestimonialsView: React.FC<TestimonialsViewProps> = ({ onOpenBookin
     </div>
   );
 };
-

@@ -115,9 +115,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span>Pest Free Services • Durban Booking</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold">Book Bio-Friendly Inspection</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">Book On-Site Property Assessment</h2>
           <p className="text-xs sm:text-sm text-emerald-200 mt-1">
-            Zero tents, non-fumigation treatment. Direct service led by Grant Arnold.
+            Licensed products registered with Department of Agriculture. SMS arrival time confirmation.
           </p>
 
           {/* Step Progress Indicator */}
@@ -154,8 +154,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
           {step === 1 && (
             <div className="space-y-5">
               <div>
-                <h3 className="text-base font-bold text-slate-900">Select Pest Issue or Service Needed</h3>
-                <p className="text-xs text-slate-500">Choose your main concern. We will inspect and provide a bio-friendly solution.</p>
+                <h3 className="text-base font-bold text-slate-900">Select Service Required</h3>
+                <p className="text-xs text-slate-500">Choose your main pest control or timber replacement requirement.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-80 overflow-y-auto pr-1">
@@ -179,7 +179,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                       )}
                     </div>
                     <p className="text-xs text-slate-500 mt-1 line-clamp-2">{srv.shortDesc}</p>
-                    <p className="text-xs font-semibold text-emerald-700 mt-2">Est: {srv.priceEstimate}</p>
+                    <p className="text-xs font-semibold text-emerald-700 mt-2">Pricing: {srv.priceEstimate}</p>
                   </button>
                 ))}
               </div>
@@ -211,7 +211,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Property Type</label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { id: 'house', label: 'Single House / Villa' },
+                      { id: 'house', label: 'Single / Multi-Story House' },
                       { id: 'apartment', label: 'Flat / Apartment' },
                       { id: 'commercial', label: 'Commercial / Office' },
                     ].map((type) => (
@@ -239,7 +239,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                   <select
                     value={formData.suburb}
                     onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
-                    className="w-full p-3 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden bg-white"
+                    className="w-full p-3 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden bg-white font-semibold"
                   >
                     {DURBAN_SUBURBS.map((sub) => (
                       <option key={sub} value={sub}>{sub}</option>
@@ -250,16 +250,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                 {/* Property Size */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                    Estimated Property Size / Scope
+                    Property Scope
                   </label>
                   <select
                     value={formData.propertySize}
                     onChange={(e) => setFormData({ ...formData, propertySize: e.target.value })}
-                    className="w-full p-3 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden bg-white"
+                    className="w-full p-3 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-hidden bg-white font-semibold"
                   >
                     <option value="1-2 Bedrooms">1 - 2 Bedrooms / Small Unit</option>
                     <option value="3-4 Bedrooms">3 - 4 Bedrooms / Standard House</option>
-                    <option value="5+ Bedrooms / Large Property">5+ Bedrooms / Large Estate</option>
+                    <option value="5+ Bedrooms / Large Property">5+ Bedrooms / Double Storey Estate</option>
                     <option value="Commercial Space">Commercial / Warehouse / Restaurant</option>
                   </select>
                 </div>
@@ -291,7 +291,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
             <div className="space-y-5">
               <div>
                 <h3 className="text-base font-bold text-slate-900">Select Date & Time Window</h3>
-                <p className="text-xs text-slate-500">Pick a convenient day for Grant or our team to inspect your property.</p>
+                <p className="text-xs text-slate-500">Pick a convenient day for our technicians to assess your property. We confirm arrival time via SMS.</p>
               </div>
 
               <div className="space-y-4">
@@ -344,8 +344,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                     className="mt-1 h-4 w-4 text-red-600 rounded-xs border-slate-300 focus:ring-red-500"
                   />
                   <label htmlFor="urgent-check" className="text-xs text-slate-800">
-                    <strong className="text-red-700 block">Emergency / Same-Day Request (Snake, Swarm)</strong>
-                    Check this if you require immediate urgent inspection.
+                    <strong className="text-red-700 block">Urgent Request</strong>
+                    Check this if you require immediate urgent assessment or callout.
                   </label>
                 </div>
               </div>
@@ -376,7 +376,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <h3 className="text-base font-bold text-slate-900">Your Contact Details</h3>
-                <p className="text-xs text-slate-500">We will send a confirmation SMS and call to confirm address specifics.</p>
+                <p className="text-xs text-slate-500">We will send an arrival time confirmation SMS before visiting.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -388,7 +388,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="e.g. Sarah Jenkins"
-                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500"
+                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 font-semibold"
                   />
                 </div>
 
@@ -399,8 +399,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="e.g. 082 123 4567"
-                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500"
+                    placeholder="e.g. 082 798 6705"
+                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 font-semibold"
                   />
                 </div>
 
@@ -412,7 +412,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. sarah@example.co.za"
-                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500"
+                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 font-semibold"
                   />
                 </div>
 
@@ -424,7 +424,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                     placeholder="e.g. 14 Baumann Ave / Florida Road"
-                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500"
+                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 font-semibold"
                   />
                 </div>
 
@@ -434,8 +434,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                     rows={2}
                     value={formData.specialNotes}
                     onChange={(e) => setFormData({ ...formData, specialNotes: e.target.value })}
-                    placeholder="e.g. Spotted yellow timber dust under floorboards, have 2 dogs."
-                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500"
+                    placeholder="e.g. Borer dust noticed in timber flooring, double-storey residence..."
+                    className="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 font-semibold"
                   />
                 </div>
               </div>
@@ -463,7 +463,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                   disabled={submitting}
                   className="flex items-center gap-2 px-8 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 shadow-md transition-all disabled:opacity-50"
                 >
-                  {submitting ? 'Confirming...' : 'Confirm Bio Inspection'}
+                  {submitting ? 'Confirming...' : 'Confirm Assessment Request'}
                 </button>
               </div>
             </form>
@@ -478,11 +478,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
 
               <div>
                 <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  Booking Confirmed
+                  Request Received
                 </span>
                 <h3 className="text-2xl font-bold text-slate-900 mt-2">Thank You, {formData.fullName}!</h3>
                 <p className="text-sm text-slate-600 mt-1 max-w-md mx-auto">
-                  Your inspection request has been logged. Grant Arnold will review your details and contact you shortly.
+                  Your assessment request has been logged. Our team will review your details and confirm via phone / SMS.
                 </p>
               </div>
 
@@ -513,11 +513,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, pre
                   Close Window
                 </button>
                 <a
-                  href={`tel:${BUSINESS_INFO.phone}`}
+                  href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                   className="px-6 py-2.5 rounded-xl bg-red-50 text-red-700 border border-red-200 text-xs font-bold hover:bg-red-100 flex items-center justify-center gap-1.5"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  <span>Call Grant Now</span>
+                  <span>Call Us ({BUSINESS_INFO.phone})</span>
                 </a>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BUSINESS_INFO } from '../data/pestData';
-import { ShieldCheck, Calendar, PhoneCall, CheckCircle2, ArrowRight, Sparkles, Leaf, Award, Bug, Footprints, ShieldAlert, Wrench, Shield, Check } from 'lucide-react';
+import { ShieldCheck, Calendar, PhoneCall, CheckCircle2, ArrowRight, Sparkles, Award, Bug, Footprints, ShieldAlert, Wrench, Phone } from 'lucide-react';
 import heroWoodBorerImg from '../assets/images/hero_wood_borer_eco_1784765733472.jpg';
 
 interface HeroProps {
@@ -14,11 +14,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
   const [activePestIcon, setActivePestIcon] = useState<string>('borer');
 
   const interactivePests = [
-    { id: 'borer', name: 'Wood-Borer', icon: Bug, desc: 'Frass powder on floorboards or timber frames. Non-fumigation bio deep penetration.', color: 'bg-emerald-600' },
-    { id: 'termite', name: 'Termite Swarm', icon: ShieldAlert, desc: 'Mud tubes or subterranean swarms. Soil perimeter barrier + non-toxic bio application.', color: 'bg-red-600' },
-    { id: 'cockroach', name: 'Roach Gel', icon: Footprints, desc: 'Kitchen & food safe odorless bait geling. Eradicates German & American roaches.', color: 'bg-emerald-700' },
-    { id: 'snake', name: 'Snake Rescue', icon: ShieldCheck, desc: 'Urgent humane relocation for cobras, mambas & adders across Durban.', color: 'bg-red-700' },
-    { id: 'repair', name: 'Timber Repair', icon: Wrench, desc: 'Grant repairs wood sills, sashes, & doors damaged by borer or water rot.', color: 'bg-emerald-800' },
+    { id: 'borer', name: 'Wood-Borer', icon: Bug, desc: 'Licensed Dept. of Agriculture treatments. Assessment required to determine if alternative to fumigation is possible.', color: 'bg-emerald-600' },
+    { id: 'termite', name: 'Termite', icon: ShieldAlert, desc: 'Termite on soil or Termite on structure barrier treatments.', color: 'bg-red-600' },
+    { id: 'cockroach', name: 'Roach Control', icon: Footprints, desc: 'Roach gel carries 3-month warranty with client cleanliness partnership.', color: 'bg-emerald-700' },
+    { id: 'rodent', name: 'Rodent Control', icon: ShieldCheck, desc: 'Massive demand. Secure baiting & entry proofing for rats and mice.', color: 'bg-emerald-800' },
+    { id: 'timber', name: 'Wood Replacement', icon: Wrench, desc: 'We dispatch trusted sub-contractors for roof structures, doors, windows & floors.', color: 'bg-amber-700' },
   ];
 
   const selectedPest = interactivePests.find(p => p.id === activePestIcon) || interactivePests[0];
@@ -40,28 +40,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
           >
             {/* Pill badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-700 text-white text-xs font-black tracking-wider uppercase shadow-md border border-red-500">
-              <Leaf className="w-4 h-4 text-emerald-300" />
-              <span>DURBAN'S BIO-FRIENDLY PEST CONTROL SPECIALIST</span>
+              <ShieldCheck className="w-4 h-4 text-emerald-300" />
+              <span>DURBAN PEST CONTROL SPECIALISTS • LICENSED WITH DEPT. OF AGRICULTURE</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
-              Clean, Bio-Friendly Pest Treatment.<br />
+              The Effective Alternative to Fumigation.<br />
               <span className="text-emerald-300 underline underline-offset-8 decoration-red-500">
-                No Tents. No Toxic Fumes. No Disruption.
+                Pest Free Services
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-emerald-100 leading-relaxed max-w-2xl font-normal">
-              Protect your Durban home and business with <strong>Grant's Pest Free Services</strong>. Our proven, non-fumigation bio-treatment eradicates wood-borer, termites, cockroaches, and pests safely — verified by UKZN entomologists and trusted by 650+ KwaZulu-Natal households since 2011.
+              Specializing in registered Wood-Borer control, Termite treatment (soil or structure), Roach gel with a 3-month warranty, and Rodent control. Free maintenance quotes & compulsory on-site property assessments.
             </p>
 
             {/* Interactive Pest Subject Matter Selector Icons */}
             <div className="pt-2 space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-emerald-300 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-400" />
-                <span>Click an Interactive Pest Icon to View Grant's Method:</span>
+                <span>Explore Our Specialized Services:</span>
               </p>
               
               <div className="flex flex-wrap gap-2">
@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
                       <selectedPest.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-xs font-black text-emerald-900 uppercase tracking-wide">{selectedPest.name} Bio-Solution</p>
+                      <p className="text-xs font-black text-emerald-900 uppercase tracking-wide">{selectedPest.name} Service</p>
                       <p className="text-xs text-slate-700 font-medium">{selectedPest.desc}</p>
                     </div>
                   </div>
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
                 className="flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-base font-black text-white bg-red-700 hover:bg-red-800 border border-red-500 shadow-xl shadow-red-950/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Calendar className="w-5 h-5" />
-                <span>Get Instant Bio-Treatment Quote</span>
+                <span>Request Assessment / Free Maintenance Quote</span>
               </button>
 
               <a
@@ -131,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
                 className="flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-base font-extrabold text-emerald-950 bg-white hover:bg-emerald-50 border-2 border-emerald-300 shadow-md transition-all"
               >
                 <PhoneCall className="w-5 h-5 text-red-600 animate-pulse" />
-                <span>Call Grant ({BUSINESS_INFO.phone})</span>
+                <span>Call Us ({BUSINESS_INFO.phone})</span>
               </a>
             </div>
 
@@ -139,15 +139,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
             <div className="pt-6 border-t border-emerald-800/80 grid grid-cols-3 gap-4 text-center sm:text-left">
               <div>
                 <p className="text-2xl sm:text-3xl font-black text-white">{BUSINESS_INFO.stats.yearsInBusiness}</p>
-                <p className="text-xs text-emerald-200 font-bold">Years Trading (Est. 2011)</p>
+                <p className="text-xs text-emerald-200 font-bold">Years Experience (Est. 2011)</p>
               </div>
               <div>
                 <p className="text-2xl sm:text-3xl font-black text-amber-300">{BUSINESS_INFO.stats.householdsServed}</p>
-                <p className="text-xs text-emerald-200 font-bold">Durban Homes Served</p>
+                <p className="text-xs text-emerald-200 font-bold">Durban Properties Assessed</p>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-black text-emerald-300">100%</p>
-                <p className="text-xs text-emerald-200 font-bold">Non-Tenting Bio Approach</p>
+                <p className="text-2xl sm:text-3xl font-black text-emerald-300">Dept. Ag</p>
+                <p className="text-xs text-emerald-200 font-bold">Licensed Products Used</p>
               </div>
             </div>
           </motion.div>
@@ -162,7 +162,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-500 bg-slate-950 group">
               <img 
                 src={heroWoodBorerImg} 
-                alt="Pest Free Services Durban Modern Bio Treatment" 
+                alt="Pest Free Services Durban Licensed Wood Borer Assessment" 
                 className="w-full h-[420px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => {
                   const target = e.currentTarget as HTMLImageElement;
@@ -174,30 +174,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
 
-              {/* Floating Badge 1 - UKZN Entomologist Verified */}
+              {/* Floating Badge 1 - Dept of Ag Licensing */}
               <div className="absolute top-4 left-4 bg-white p-3.5 rounded-2xl shadow-xl border-2 border-emerald-600 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-red-700 text-white flex items-center justify-center shrink-0 font-black">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-xs font-black text-slate-900">UKZN Entomologist Verified</p>
-                  <p className="text-[11px] text-emerald-800 font-bold">Tested & proven since 2012</p>
+                  <p className="text-xs font-black text-slate-900">Licensed with Dept. of Agriculture</p>
+                  <p className="text-[11px] text-emerald-800 font-bold">Compulsory Registered Chemicals</p>
                 </div>
               </div>
 
-              {/* Floating Badge 2 - Emergency Hotline Card */}
+              {/* Floating Badge 2 - Notice */}
               <div className="absolute bottom-4 left-4 right-4 bg-emerald-950/95 backdrop-blur-md p-4 rounded-2xl border-2 border-emerald-500 text-white space-y-2 shadow-2xl">
                 <div className="flex items-center justify-between">
                   <span className="flex items-center gap-2 text-xs font-extrabold text-emerald-300">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
-                    Bio-Friendly Wood-Borer Specialty
+                    Wood-Borer Assessment
                   </span>
                   <span className="text-[10px] bg-red-600 text-white px-2.5 py-0.5 rounded-md font-black uppercase">
-                    No Tents
+                    On-Site Check
                   </span>
                 </div>
                 <p className="text-xs text-slate-200 font-medium">
-                  Notice timber powder or exit holes in your floors or furniture? Get a direct inspection by Grant Arnold.
+                  An assessment is compulsory to determine timber accessibility and verify if the alternative to fumigation is possible for your property.
                 </p>
                 <div className="flex gap-2 pt-1">
                   <button 

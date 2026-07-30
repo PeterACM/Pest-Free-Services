@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { SERVICES_DATA, DURBAN_SUBURBS } from '../data/pestData';
 import { ServiceItem } from '../types';
-import { ShieldAlert, Bug, Footprints, Bed, Sparkles, Wind, ShieldCheck, Wrench, CheckCircle2, ArrowRight, Calendar, Calculator, Leaf } from 'lucide-react';
+import { ShieldAlert, Bug, Footprints, Bed, Sparkles, Wind, ShieldCheck, Wrench, CheckCircle2, ArrowRight, Calendar, Calculator, Shield } from 'lucide-react';
 
 interface ServicesViewProps {
   onOpenBooking: () => void;
@@ -15,7 +15,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
   selectedServiceId,
   onSelectServiceForBooking,
 }) => {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'pest' | 'handyman'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'pest' | 'repair'>('all');
   const [selectedSub, setSelectedSub] = useState<string>('Umbilo');
   const [propertyType, setPropertyType] = useState<string>('house');
 
@@ -37,7 +37,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
 
   return (
     <div id="services-view-container" className="space-y-0 bg-white">
-      {/* Header (BACKGROUND: Strong Deep Emerald Green bg-emerald-900) */}
+      {/* Header */}
       <motion.section 
         id="services-header-section" 
         className="py-16 bg-emerald-900 text-white border-b-4 border-emerald-950"
@@ -48,21 +48,21 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <span className="text-xs font-black text-white bg-red-700 px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">
-            Our Bio-Friendly Services
+            Pest Free Services
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
-            Eco-Friendly Pest Eradication & Timber Repairs
+            Pest Control & Wood Replacement
           </h1>
           <p className="text-emerald-100 text-base mt-3 leading-relaxed font-medium">
-            From our flagship UKZN-verified wood-borer treatment to cockroach gel baiting, snake relocation, and wooden window/door restoration across Durban.
+            Licensed chemical treatments registered with the Department of Agriculture, Roach Gel with 3-Month Warranty, Rodent Control, and Sub-Contracted Wood Replacement.
           </p>
 
           {/* Filter Pills */}
           <div className="flex justify-center flex-wrap gap-2 mt-8">
             {[
               { id: 'all', label: 'All Services' },
-              { id: 'pest', label: 'Pest Eradication' },
-              { id: 'handyman', label: 'Handyman Timber Repairs' },
+              { id: 'pest', label: 'Pest Control Services' },
+              { id: 'repair', label: 'Wood Replacement Sub-Contractors' },
             ].map((f) => (
               <button
                 key={f.id}
@@ -80,7 +80,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
         </div>
       </motion.section>
 
-      {/* Services List (BACKGROUND: Crisp Pure White) */}
+      {/* Services List */}
       <motion.section 
         id="services-list-section" 
         className="py-16 bg-white border-b-4 border-emerald-700"
@@ -120,16 +120,16 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                             </span>
                           )}
                         </div>
-                        <p className="text-xs font-extrabold text-emerald-800 mt-0.5">Est. Investment: {srv.priceEstimate}</p>
+                        <p className="text-xs font-extrabold text-emerald-800 mt-0.5">Pricing: {srv.priceEstimate}</p>
                       </div>
                     </div>
 
                     <p className="text-sm text-slate-700 leading-relaxed font-medium">{srv.fullDesc}</p>
 
                     <div className="p-4 bg-emerald-900 text-white rounded-2xl border border-emerald-600 shadow-md flex items-start gap-3 text-xs">
-                      <Leaf className="w-5 h-5 text-emerald-300 shrink-0 mt-0.5" />
+                      <Shield className="w-5 h-5 text-emerald-300 shrink-0 mt-0.5" />
                       <div>
-                        <strong className="text-emerald-300 font-extrabold uppercase tracking-wide">Bio Advantage: </strong>
+                        <strong className="text-emerald-300 font-extrabold uppercase tracking-wide">Key Specification: </strong>
                         <span className="font-medium text-emerald-100">{srv.bioAdvantage}</span>
                       </div>
                     </div>
@@ -137,19 +137,19 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
 
                   {/* Right Action Column */}
                   <div className="lg:col-span-4 bg-slate-950 text-white p-6 rounded-2xl border-2 border-emerald-500 space-y-4 text-xs shadow-xl">
-                    <h3 className="font-black text-white text-sm border-b border-slate-800 pb-2 uppercase tracking-wide">Treatment Highlights</h3>
+                    <h3 className="font-black text-white text-sm border-b border-slate-800 pb-2 uppercase tracking-wide">Service Highlights</h3>
                     <ul className="space-y-2 text-slate-200 font-semibold">
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span>No fumigation tents or gas loads</span>
+                        <span>Licensed with Dept. of Agriculture</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span>Stay inside during treatment</span>
+                        <span>Compulsory On-Site Assessment</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span>Direct owner oversight by Grant</span>
+                        <span>SMS Arrival Confirmation</span>
                       </li>
                     </ul>
 
@@ -161,7 +161,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                       className="w-full py-3.5 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-xs shadow-lg transition-colors flex items-center justify-center gap-2 border border-red-500"
                     >
                       <Calendar className="w-4 h-4" />
-                      <span>Book Inspection for {srv.name.split(' ')[0]}</span>
+                      <span>Request Inspection for {srv.name.split(' ')[0]}</span>
                     </button>
                   </div>
                 </div>
@@ -171,7 +171,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
         </div>
       </motion.section>
 
-      {/* Interactive Estimate Calculator (BACKGROUND: Deep Dark Slate bg-slate-950) */}
+      {/* Service Request Inquiry Panel */}
       <motion.section 
         id="estimate-calculator-section" 
         className="py-16 bg-slate-950 text-white"
@@ -187,8 +187,8 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                 <Calculator className="w-7 h-7 text-red-600" />
               </div>
               <div>
-                <h2 className="text-xl font-black text-white">Durban Instant Quote Estimator</h2>
-                <p className="text-xs text-emerald-200 font-medium">Calculate an approximate cost for bio-friendly treatment in your area.</p>
+                <h2 className="text-xl font-black text-white">Durban Assessment Request</h2>
+                <p className="text-xs text-emerald-200 font-medium">Select your suburb & property type to request a maintenance quote or compulsory borer assessment.</p>
               </div>
             </div>
 
@@ -214,26 +214,26 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                   className="w-full p-3 rounded-xl border-2 border-emerald-500 text-slate-900 bg-white font-extrabold"
                 >
                   <option value="apartment">Flat / Apartment</option>
-                  <option value="house">Standard House (3-4 Beds)</option>
-                  <option value="commercial">Commercial / Restaurant</option>
+                  <option value="house">Single / Multi-Story Residence</option>
+                  <option value="commercial">Commercial / Industrial Property</option>
                 </select>
               </div>
             </div>
 
             <div className="p-5 bg-white text-slate-900 rounded-2xl border-2 border-emerald-400 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
               <div>
-                <p className="text-xs text-emerald-900 font-black uppercase tracking-wide">Estimated Range for {selectedSub} ({propertyType}):</p>
-                <p className="text-3xl font-black text-red-700 mt-0.5">
-                  {propertyType === 'apartment' ? 'R850 - R1,600' : propertyType === 'house' ? 'R1,450 - R2,800' : 'R2,500 - R5,000'}
+                <p className="text-xs text-emerald-900 font-black uppercase tracking-wide">Inspection Plan for {selectedSub} ({propertyType}):</p>
+                <p className="text-2xl font-black text-red-700 mt-0.5">
+                  Free Maintenance Quote / Custom Assessment
                 </p>
-                <p className="text-[11px] text-slate-600 font-semibold">Includes full bio application & zero-tenting guarantee.</p>
+                <p className="text-[11px] text-slate-600 font-semibold">Includes compulsory on-site check & SMS time confirmation.</p>
               </div>
 
               <button
                 onClick={onOpenBooking}
                 className="px-6 py-3.5 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-xs shadow-lg shrink-0 border border-red-500"
               >
-                Proceed to Book Date
+                Book On-Site Assessment
               </button>
             </div>
           </div>

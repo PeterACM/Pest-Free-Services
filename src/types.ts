@@ -33,7 +33,7 @@ export interface Testimonial {
   rating: number;
   serviceType: string;
   year: string;
-  verifiedBadge?: string;
+  verifiedBadge?: boolean | string;
 }
 
 export interface BookingFormData {

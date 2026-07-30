@@ -33,7 +33,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
 
   return (
     <div id="contact-view-container" className="space-y-0 bg-white">
-      {/* Header (BACKGROUND: Strong Deep Emerald Green bg-emerald-900) */}
+      {/* Header */}
       <motion.section 
         id="contact-header-section" 
         className="py-16 bg-emerald-900 text-white border-b-4 border-emerald-950"
@@ -44,18 +44,18 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <span className="text-xs font-black text-white bg-red-700 px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">
-            Direct Owner Access
+            Direct Contact
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
-            Contact Grant Arnold & Pest Free Services
+            Contact Pest Free Services
           </h1>
           <p className="text-emerald-100 text-base mt-3 leading-relaxed font-medium">
-            Have questions about wood-borer, non-fumigation bio treatments, or wooden repairs in Durban? Get in touch with Grant directly.
+            Have questions about wood-borer assessments, termite control, roach gel warranties, or timber repairs in Durban? Get in touch with our team today.
           </p>
         </div>
       </motion.section>
 
-      {/* Main Contact Grid (BACKGROUND: Pure White) */}
+      {/* Main Contact Grid */}
       <motion.section 
         id="contact-content-section" 
         className="py-16 bg-white border-b-4 border-emerald-700"
@@ -72,17 +72,17 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
               <div className="p-6 bg-red-800 text-white border-2 border-red-500 rounded-3xl space-y-3 shadow-2xl">
                 <div className="flex items-center gap-3 text-amber-300">
                   <ShieldAlert className="w-7 h-7 animate-bounce" />
-                  <h3 className="font-black text-lg uppercase tracking-wide">Emergency Pest Hotline</h3>
+                  <h3 className="font-black text-lg uppercase tracking-wide">Pest Control Line</h3>
                 </div>
                 <p className="text-xs text-red-100 leading-relaxed font-medium">
-                  For urgent snake sightings, aggressive termite swarms, or immediate bio callouts in greater Durban:
+                  For urgent pest control inquiries or borer inspection requests in greater Durban:
                 </p>
                 <a
                   href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
                   className="w-full py-3.5 rounded-xl bg-red-950 hover:bg-black text-white font-black text-xs flex items-center justify-center gap-2 shadow-xl border border-red-500 transition-colors"
                 >
                   <PhoneCall className="w-4 h-4 text-amber-300" />
-                  <span>Call Grant Directly: {BUSINESS_INFO.phone}</span>
+                  <span>Call Us: {BUSINESS_INFO.phone}</span>
                 </a>
               </div>
 
@@ -103,7 +103,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                     <Phone className="w-5 h-5 text-amber-300 shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-white block font-black uppercase text-[11px]">Mobile & Landline</strong>
-                      <a href={`tel:${BUSINESS_INFO.phone}`} className="hover:text-amber-300 font-bold block text-sm">
+                      <a href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-amber-300 font-bold block text-sm">
                         Cell: {BUSINESS_INFO.phone}
                       </a>
                       <span className="text-emerald-200">Tel: {BUSINESS_INFO.landline}</span>
@@ -130,9 +130,10 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                 </div>
 
                 <div className="p-4 bg-slate-950 text-emerald-100 rounded-2xl border border-emerald-600 text-xs space-y-1">
-                  <p className="font-black text-white">{BUSINESS_INFO.tradeName}</p>
+                  <p className="font-black text-white">{BUSINESS_INFO.name}</p>
                   <p className="text-emerald-300">Close Corp Reg: {BUSINESS_INFO.regNumber}</p>
                   <p className="text-emerald-300">VAT Registration: {BUSINESS_INFO.vatNumber}</p>
+                  <p className="text-amber-300">Licensed with Dept. of Agriculture</p>
                 </div>
               </div>
             </div>
@@ -147,7 +148,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                     </div>
                     <h3 className="text-2xl font-black text-slate-900">Message Received!</h3>
                     <p className="text-xs sm:text-sm text-slate-700 font-medium max-w-md mx-auto">
-                      Thank you for contacting Pest Free Services. Grant Arnold will review your query and respond shortly.
+                      Thank you for contacting Pest Free Services. Our team will review your query and respond promptly.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -159,8 +160,8 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
-                      <h2 className="text-2xl font-black text-slate-900">Send an Online Inquiry</h2>
-                      <p className="text-xs text-slate-600 font-medium mt-1">Fill out the form below and Grant will reach out promptly.</p>
+                      <h2 className="text-2xl font-black text-slate-900">Send an Inquiry</h2>
+                      <p className="text-xs text-slate-600 font-medium mt-1">Fill out the form below and we will contact you promptly.</p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold text-slate-700">
@@ -183,7 +184,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="e.g. 082 123 4567"
+                          placeholder="e.g. 082 798 6705"
                           className="w-full p-3 rounded-xl border-2 border-emerald-300 focus:ring-2 focus:ring-red-500 text-sm font-semibold"
                         />
                       </div>
@@ -214,13 +215,13 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                       </div>
 
                       <div className="sm:col-span-2">
-                        <label className="block text-slate-900 mb-1">Message or Pest Description *</label>
+                        <label className="block text-slate-900 mb-1">Message or Service Request *</label>
                         <textarea
                           required
                           rows={4}
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          placeholder="Describe your wood-borer, pest issue, or handyman repair needs..."
+                          placeholder="Describe your wood-borer assessment, pest control, or wood replacement needs..."
                           className="w-full p-3 rounded-xl border-2 border-emerald-300 focus:ring-2 focus:ring-red-500 text-sm font-semibold"
                         />
                       </div>
@@ -231,7 +232,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
                       className="w-full py-4 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-sm shadow-xl border border-red-500 transition-colors flex items-center justify-center gap-2 uppercase tracking-wide"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Send Inquiry to Grant</span>
+                      <span>Send Inquiry</span>
                     </button>
                   </form>
                 )}
@@ -241,7 +242,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
         </div>
       </motion.section>
 
-      {/* Greater Durban Service Area Map Visual (BACKGROUND: Deep Dark Slate bg-slate-950) */}
+      {/* Greater Durban Service Area Map Visual */}
       <motion.section 
         id="map-coverage-section" 
         className="py-16 bg-slate-950 text-white"
@@ -255,14 +256,14 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
                 <h2 className="text-2xl font-black text-white">Greater Durban Service Coverage</h2>
-                <p className="text-xs text-emerald-200 font-medium mt-1">Providing bio-friendly pest control & repairs to all Durban suburbs since 2011.</p>
+                <p className="text-xs text-emerald-200 font-medium mt-1">Providing licensed pest control & timber replacement services across Durban since 2011.</p>
               </div>
 
               <button
                 onClick={onOpenBooking}
                 className="px-6 py-3 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-xs shadow-lg border border-red-500 shrink-0"
               >
-                Book Inspection in Your Area
+                Book Assessment in Your Area
               </button>
             </div>
 
