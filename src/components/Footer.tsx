@@ -19,13 +19,19 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="flex items-center shrink-0">
             <img 
               src={pestLogo} 
-              alt="pest.png" 
+              alt="Pest Free Services Logo" 
               className="h-16 sm:h-20 w-auto bg-white p-1.5 rounded-xl shadow-md border border-emerald-400 object-contain"
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;
-                if (!target.dataset.triedFallback1) {
-                  target.dataset.triedFallback1 = 'true';
-                  target.src = '/pest.png';
+                if (!target.dataset.tried1) {
+                  target.dataset.tried1 = 'true';
+                  target.src = './pest.png';
+                } else if (!target.dataset.tried2) {
+                  target.dataset.tried2 = 'true';
+                  target.src = 'pest.png';
+                } else if (!target.dataset.tried3) {
+                  target.dataset.tried3 = 'true';
+                  target.src = './images/pest.png';
                 }
               }}
             />

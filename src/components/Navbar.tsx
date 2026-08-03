@@ -41,13 +41,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
         >
           <img 
             src={pestLogo} 
-            alt="pest.png" 
+            alt="Pest Free Services Logo" 
             className="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain transition-transform group-hover:scale-105"
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;
-              if (!target.dataset.triedFallback1) {
-                target.dataset.triedFallback1 = 'true';
-                target.src = '/pest.png';
+              if (!target.dataset.tried1) {
+                target.dataset.tried1 = 'true';
+                target.src = './pest.png';
+              } else if (!target.dataset.tried2) {
+                target.dataset.tried2 = 'true';
+                target.src = 'pest.png';
+              } else if (!target.dataset.tried3) {
+                target.dataset.tried3 = 'true';
+                target.src = './images/pest.png';
               }
             }}
           />
