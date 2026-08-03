@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
-import { PhoneCall, Menu, X, MessageSquare, ShieldCheck, Sparkles, Phone } from 'lucide-react';
-const pestFreeLogo = '/Pestfreelogo.png';
+import { PhoneCall, Menu, X, ShieldCheck, Phone } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageView;
@@ -32,15 +31,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
     <header id="main-header" className="sticky top-0 z-40 bg-white border-b-2 border-emerald-600 shadow-md">
       {/* Primary Navigation Bar */}
       <div className="w-full px-2 sm:px-4 lg:px-6 h-22 sm:h-24 flex items-center justify-between">
-        {/* Logo positioned at the far left corner */}
+        {/* Brand Logo Header */}
         <button 
           id="logo-btn"
           onClick={() => handleNavClick('home')}
-          className="flex items-center group focus:outline-hidden py-1 pl-0 sm:pl-1 shrink-0"
+          className="flex items-center group focus:outline-hidden py-1 shrink-0"
           aria-label="Pest Free Services Home"
         >
           <img 
-            src="/pestfreelogo.png" 
+            src="/pest.png" 
             alt="Pest Free Services Logo" 
             className="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain transition-transform group-hover:scale-105"
             onError={(e) => {
@@ -50,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
                 target.src = '/Pestfreelogo.png';
               } else if (!target.dataset.triedFallback2) {
                 target.dataset.triedFallback2 = 'true';
-                target.src = '/logo.png';
+                target.src = '/pestfreelogo.png';
               }
             }}
           />
