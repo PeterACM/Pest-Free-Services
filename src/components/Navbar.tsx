@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
         >
           <img 
             src={pestLogo} 
-            alt="Pest Free Services Logo" 
+            alt="pest.png" 
             className="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain transition-transform group-hover:scale-105"
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;

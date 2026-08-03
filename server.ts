@@ -32,23 +32,22 @@ app.post("/api/chat", async (req, res) => {
       return res.status(400).json({ error: "Message is required" });
     }
 
-    const systemInstruction = `You are Grant Arnold, founder and lead pest expert at Pest Free Services (trading as Grant's Pest Free Services) in Durban, South Africa.
-Your company offers bio-friendly, non-fumigation pest control and handyman repairs across greater Durban (Umbilo, Morningside, North Beach, Umhlanga, Westville, Musgrave, etc.).
+    const systemInstruction = `You are representing Pest Free Services (trading as Grant's Pest Free Services) in Durban, South Africa.
+Your company offers licensed pest control and sub-contracted timber repairs across greater Durban (Umbilo, Morningside, North Beach, Umhlanga, Westville, Musgrave, etc.).
 Key company highlights:
-- Flagship specialty: Wood-borer and termite treatment using bio-friendly, non-fumigation methods. No tents, no mess, no disruption!
-- Tested and proven in January 2012 at a block of flats on Baumann Avenue, North Beach, Durban. Results independently verified by UKZN-trained entomologists.
+- Specialty: Wood-borer and termite treatment using products registered with the Department of Agriculture as an effective alternative to fumigation. An initial on-site property assessment is compulsory to determine timber accessibility.
 - 14+ years in business (since April 2011), served 650+ Durban households.
-- Broad pest coverage: Wood-borer, cockroaches, ants, bed bugs, dust mites, mosquitoes, snake control, gecko control.
-- Handyman services: Wooden window repair, wooden door repair, cupboard repair.
-- Business Details: CC Reg B2011063958, VAT No 9365327171, Address: 24 Kensington Gardens, Umbilo, Durban, 4001.
+- Broad pest coverage: Wood-borer, cockroaches (gel baiting + cleanliness partnership), ants, bed bugs, dust mites, mosquitoes, snake relocation, gecko control.
+- Timber Repairs: We dispatch trusted sub-contractors for roof, door, window, and floor timber replacement.
+- Business Details: CC Reg B2011063958, VAT No 9365327171, Address: 24 Kensington Gardens, Umbilo, Durban, 4001. Main Contact Number: 0827986705.
 
 Your tone should be warm, friendly, authoritative, reassuring, professional, and uniquely Durban-focused.
-Answer user questions concisely, emphasize that your treatments do NOT require tenting or evacuating the home, offer instant quote estimations when asked, and encourage users to use the online booking system or call Grant directly for urgent cases (like snake or termite swarms).`;
+Answer user questions concisely, emphasize that an initial on-site property assessment is compulsory, explain pricing requires an assessment, and encourage users to use the online booking system to request an assessment or call 0827986705.`;
 
     if (process.env.GEMINI_API_KEY) {
       try {
         const chatPrompt = conversationHistory && Array.isArray(conversationHistory)
-          ? conversationHistory.map((h: any) => `${h.role === 'user' ? 'User' : 'Grant'}: ${h.text}`).join('\n') + `\nUser: ${message}`
+          ? conversationHistory.map((h: any) => `${h.role === 'user' ? 'User' : 'Pest Free Services'}: ${h.text}`).join('\n') + `\nUser: ${message}`
           : message;
 
         const response = await ai.models.generateContent({
@@ -60,7 +59,7 @@ Answer user questions concisely, emphasize that your treatments do NOT require t
           },
         });
 
-        const reply = response.text || "Thank you for reaching out to Pest Free Services! How can I assist with your pest or borer concerns in Durban today?";
+        const reply = response.text || "Thank you for reaching out to Pest Free Services! How can we assist with your pest or borer concerns in Durban today?";
         return res.json({ reply });
       } catch (geminiError) {
         console.error("Gemini API Error:", geminiError);
@@ -68,19 +67,19 @@ Answer user questions concisely, emphasize that your treatments do NOT require t
     }
 
     // Smart fallback if API key is not yet set or encounters an issue
-    let fallbackReply = "Hello! I'm Grant Arnold from Pest Free Services in Durban. ";
+    let fallbackReply = "Hello! Welcome to Pest Free Services in Durban. ";
     const msgLower = message.toLowerCase();
 
     if (msgLower.includes("borer") || msgLower.includes("wood")) {
-      fallbackReply += "Our flagship bio-friendly wood-borer treatment penetrates deep into the timber without any toxic fumigation tents or household evacuation. It was verified by UKZN entomologists back in 2012! Would you like to book an inspection?";
+      fallbackReply += "We specialize in registered wood-borer control using Department of Agriculture registered chemical products as an effective alternative to fumigation. An on-site property assessment is required to check timber accessibility. Would you like to request an assessment?";
     } else if (msgLower.includes("tent") || msgLower.includes("fumigat")) {
-      fallbackReply += "Unlike traditional tent fumigation, our bio-based non-fumigation treatment requires NO tents, creates NO toxic mess, and allows you to stay comfortably in your home during treatment.";
-    } else if (msgLower.includes("quote") || msgLower.includes("cost") || msgLower.includes("price")) {
-      fallbackReply += "Our eco-friendly treatments are cost-effective and tailored to your property size. You can use our interactive Booking System right here on the site to get an instant quote and pick a date!";
+      fallbackReply += "Our treatment is an effective alternative to fumigation using registered products. An on-site assessment is compulsory to ascertain whether the alternative to fumigation is possible for your property structure.";
+    } else if (msgLower.includes("quote") || msgLower.includes("cost") || msgLower.includes("price") || msgLower.includes("free")) {
+      fallbackReply += "We do not offer free quotes over the phone as treatments vary by property structure. An on-site property assessment is necessary. You can use our online form right here to request an assessment!";
     } else if (msgLower.includes("snake") || msgLower.includes("emergency")) {
-      fallbackReply += "For urgent snake or gecko control in Durban, please keep a safe distance and call Grant directly at 082 555 7890 or book an emergency slot on our contact page.";
+      fallbackReply += "For urgent snake or gecko control in Durban, please keep a safe distance and call us directly at 082 798 6705 or request an urgent slot on our booking page.";
     } else {
-      fallbackReply += "We cover wood-borer, cockroaches, ants, bed bugs, dust mites, mosquitoes, snakes, geckos, and wooden window/door repairs across Durban. How can I assist you today?";
+      fallbackReply += "We cover wood-borer, cockroaches, ants, bed bugs, dust mites, mosquitoes, snakes, geckos, and sub-contracted timber repairs across Durban. How can we assist you today?";
     }
 
     return res.json({ reply: fallbackReply });

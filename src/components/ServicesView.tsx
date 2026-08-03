@@ -54,7 +54,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
             Pest Control & Wood Replacement
           </h1>
           <p className="text-emerald-100 text-base mt-3 leading-relaxed font-medium">
-            Licensed chemical treatments registered with the Department of Agriculture, Roach Gel with 3-Month Warranty, Rodent Control, and Sub-Contracted Wood Replacement.
+            Licensed chemical treatments registered with the Department of Agriculture, Roach Gel Control, Rodent Control, and Sub-Contracted Wood Replacement.
           </p>
 
           {/* Filter Pills */}
@@ -188,7 +188,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
               </div>
               <div>
                 <h2 className="text-xl font-black text-white">Durban Assessment Request</h2>
-                <p className="text-xs text-emerald-200 font-medium">Select your suburb & property type to request a maintenance quote or compulsory borer assessment.</p>
+                <p className="text-xs text-emerald-200 font-medium">Select your suburb & property type to request an on-site property assessment.</p>
               </div>
             </div>
 
@@ -224,7 +224,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
               <div>
                 <p className="text-xs text-emerald-900 font-black uppercase tracking-wide">Inspection Plan for {selectedSub} ({propertyType}):</p>
                 <p className="text-2xl font-black text-red-700 mt-0.5">
-                  Free Maintenance Quote / Custom Assessment
+                  Request On-Site Property Assessment
                 </p>
                 <p className="text-[11px] text-slate-600 font-semibold">Includes compulsory on-site check & SMS time confirmation.</p>
               </div>

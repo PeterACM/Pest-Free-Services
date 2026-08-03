@@ -14,14 +14,14 @@ export const LiveChatWidget: React.FC = () => {
     {
       id: 'welcome-1',
       sender: 'grant',
-      text: "Hello! Welcome to Pest Free Services in Durban. How can we assist you with wood-borer assessments, termite control, roach warranties, or rodent control today?",
+      text: "Hello! Welcome to Pest Free Services in Durban. How can we assist you with wood-borer assessments, termite control, roach gel treatment, or rodent control today?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
 
   const quickPrompts = [
     "Compulsory borer assessment requirements",
-    "How does the Roach Gel 3-month warranty work?",
+    "How does the Roach Gel cleanliness partnership work?",
     "Rodent control services in Durban",
     "Sub-contracted wood replacement details",
   ];

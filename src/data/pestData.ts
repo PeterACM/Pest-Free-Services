@@ -17,7 +17,7 @@ export const BUSINESS_INFO = {
     yearsInBusiness: "14+",
     householdsServed: "650+",
     licensing: "Dept. of Agriculture Licensed",
-    warranty: "3-Month Roach Gel Warranty"
+    specialty: "Targeted Roach Gel Control"
   }
 };
 
@@ -49,7 +49,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "The effective alternative to fumigation using Dept. of Agriculture licensed products.",
     fullDesc: "Durban's coastal humidity affects timber in roofs, floors, and door frames. Pest Free Services specializes in providing an effective alternative to fumigation using products registered with the Department of Agriculture for borer control. An initial on-site assessment is compulsory to verify timber accessibility and structure. One of our primary licensed products absorbs deep into wood; depending on the product selected, partial evacuation during treatment may be required. If timber is inaccessible (e.g. double-storey void gaps), we refer you to trusted fumigation tenting partners.",
     bioAdvantage: "Compulsory use of registered chemicals. Assessment determines if alternative to fumigation is possible.",
-    priceEstimate: "Free Quote for Maintenance | Property Transfer Inspection Fee Applies",
+    priceEstimate: "Assessment Required | Property Transfer Inspection Fee Applies",
     isFlagship: true
   },
   {
@@ -60,17 +60,17 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "Specialized barrier and treatment options for Termite on soil or Termite on structure.",
     fullDesc: "Termite activity manifests as either Termite on soil or Termite on structure. Pest Free Services applies licensed chemical soil barriers and structural timber treatments to stop colony expansion and protect building foundations.",
     bioAdvantage: "Licensed Department of Agriculture chemicals tailored to soil vs structure activity.",
-    priceEstimate: "Free Quote for Maintenance"
+    priceEstimate: "Assessment Required"
   },
   {
     id: "cockroaches",
-    name: "Cockroach Control (3-Month Warranty)",
+    name: "Cockroach Control",
     category: "pest",
     iconName: "Bug",
-    shortDesc: "Targeted gel baiting with 3-month warranty + client partnership.",
-    fullDesc: "Our cockroach gel applications carry a 3-month warranty. Successful cockroach control is a true partnership: our technicians apply high-performance gel bait, and residents partner with us by maintaining cleanliness and removing attractions such as stored cardboard boxes, old newspapers, and food debris.",
-    bioAdvantage: "3-Month Warranty backed by our active client sanitation partnership.",
-    priceEstimate: "Free Quote for Maintenance"
+    shortDesc: "Targeted gel baiting with client cleanliness partnership.",
+    fullDesc: "Our cockroach gel applications provide targeted, professional control. Successful cockroach control is a true partnership: our technicians apply high-performance gel bait, and residents partner with us by maintaining cleanliness and removing attractions such as stored cardboard boxes, old newspapers, and food debris.",
+    bioAdvantage: "High-performance gel backed by active client sanitation partnership.",
+    priceEstimate: "Assessment Required"
   },
   {
     id: "rodents",
@@ -80,7 +80,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "High-demand rodent baiting, trapping, and perimeter proofing.",
     fullDesc: "High demand across Durban residential homes and businesses. We install secure tamper-resistant bait stations and entry point proofing to keep premises free of rats and mice.",
     bioAdvantage: "Safe, targeted bait placement away from children and pets.",
-    priceEstimate: "Free Quote for Maintenance"
+    priceEstimate: "Assessment Required"
   },
   {
     id: "ants",
@@ -90,7 +90,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "Perimeter barriers and queen-targeting bait matrices.",
     fullDesc: "Targeted control for garden and sugar ants around food prep areas and building perimeters.",
     bioAdvantage: "Effective perimeter application for long-term control.",
-    priceEstimate: "Free Quote for Maintenance"
+    priceEstimate: "Assessment Required"
   },
   {
     id: "bed-bugs",
@@ -100,7 +100,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "Licensed chemical extraction for mattresses, frames, and headboards.",
     fullDesc: "Comprehensive bed bug control using registered products that eliminate bed bugs and eggs from sleeping areas.",
     bioAdvantage: "Targeted application with clear re-entry safety guidelines.",
-    priceEstimate: "Free Quote for Maintenance"
+    priceEstimate: "Assessment Required"
   },
   {
     id: "snakes-geckos",
@@ -110,7 +110,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "Humane snake relocation, perimeter repellents, and gecko entry proofing.",
     fullDesc: "Durban gardens and roof spaces attract geckos and venomous snakes. Pest Free Services provides prompt, safe snake relocation and perimeter repellents.",
     bioAdvantage: "Safe relocation and entry proofing.",
-    priceEstimate: "Free Quote for Maintenance"
+    priceEstimate: "Assessment Required"
   },
   {
     id: "wood-replacement",
@@ -148,7 +148,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     id: "t3",
     clientName: "Prashant Naidoo",
     suburb: "Umbilo, Durban",
-    quote: "Pest Free Services handled a cockroach issue at our restaurant using professional gel treatment backed by a 3-month warranty. They gave us clear advice on removing cardboard boxes and maintaining cleanliness, and the results have been fantastic.",
+    quote: "Pest Free Services handled a cockroach issue at our restaurant using professional gel treatment. They gave us clear advice on removing cardboard boxes and maintaining cleanliness, and the results have been fantastic.",
     rating: 5,
     serviceType: "Cockroach Gel Control",
     year: "2025"
@@ -195,20 +195,20 @@ export const BLOG_ARTICLES: BlogArticle[] = [
   },
   {
     id: "cockroach-control-partnership",
-    title: "Why Cockroach Control is a Partnership (and the 3-Month Warranty)",
+    title: "Why Cockroach Control is a Partnership",
     category: "Pest Management",
     excerpt: "How professional roach gel application combined with proper home sanitation achieves lasting results.",
     content: [
       "Cockroach control in humid coastal environments requires more than just applying a product — it relies on a joint partnership between the pest control technician and the property resident.",
-      "The Role of Roach Gel: Pest Free Services applies licensed roach gel formulations that target roach harborages. Our roach gel treatments carry a 3-month warranty.",
+      "The Role of Roach Gel: Pest Free Services applies licensed roach gel formulations that target roach harborages and provide targeted control.",
       "The Resident's Role in Success: Cardboard boxes, old newspapers, clutter, and uncleaned food crumbs attract cockroaches and provide nesting materials. To maintain a cockroach-free environment, residents partner with us by removing cardboard, disposing of paper clutter, and sealing food sources.",
-      "By working together, our 3-month warranty provides strong, reliable protection for your home or business."
+      "By working together, our treatment provides strong, reliable protection for your home or business."
     ],
     readTime: "4 min read",
     date: "June 28, 2026",
     author: "Pest Free Services",
-    tags: ["Cockroach Control", "3-Month Warranty", "Durban Pest Control", "Sanitation"],
-    seoDescription: "Discover how Pest Free Services combines roach gel treatment with a 3-month warranty and resident sanitation partnership."
+    tags: ["Cockroach Control", "Resident Partnership", "Durban Pest Control", "Sanitation"],
+    seoDescription: "Discover how Pest Free Services combines roach gel treatment with resident sanitation partnership."
   },
   {
     id: "termite-soil-vs-structure",
@@ -219,13 +219,13 @@ export const BLOG_ARTICLES: BlogArticle[] = [
       "Termite activity in Durban is generally classified into two main categories: Termite on soil and Termite on structure.",
       "Termite on Soil: Subterranean termites construct mud tubes from ground soil into buildings. Controlling soil activity involves trenching and applying registered termiticides to form an impenetrable chemical soil barrier around foundation walls.",
       "Termite on Structure: Drywood or subterranean termites feeding directly inside wooden door frames, roof trusses, or floorboards require direct structural treatment with licensed preservative formulations.",
-      "Pest Free Services provides free quotes for maintenance termite control, conducting thorough inspections to identify whether your property requires soil barriers, structural treatments, or both."
+      "Pest Free Services conducts thorough on-site assessments for termite control to identify whether your property requires soil barriers, structural treatments, or both."
     ],
     readTime: "4 min read",
     date: "June 15, 2026",
     author: "Pest Free Services",
     tags: ["Termite", "Termite Control", "Soil Treatment", "Structural Protection"],
-    seoDescription: "Guide to Termite on soil vs Termite on structure control in Durban. Contact Pest Free Services for a free maintenance quote."
+    seoDescription: "Guide to Termite on soil vs Termite on structure control in Durban. Contact Pest Free Services to request an on-site assessment."
   },
   {
     id: "subcontracted-wood-replacement",

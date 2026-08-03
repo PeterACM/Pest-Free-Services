@@ -50,7 +50,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onOpenBooking }) => {
             Contact Pest Free Services
           </h1>
           <p className="text-emerald-100 text-base mt-3 leading-relaxed font-medium">
-            Have questions about wood-borer assessments, termite control, roach gel warranties, or timber repairs in Durban? Get in touch with our team today.
+            Have questions about wood-borer assessments, termite control, roach gel application, or timber repairs in Durban? Get in touch with our team today.
           </p>
         </div>
       </motion.section>

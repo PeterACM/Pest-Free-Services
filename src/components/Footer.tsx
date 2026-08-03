@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="flex items-center shrink-0">
             <img 
               src={pestLogo} 
-              alt="Pest Free Services Logo" 
+              alt="pest.png" 
               className="h-16 sm:h-20 w-auto bg-white p-1.5 rounded-xl shadow-md border border-emerald-400 object-contain"
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;

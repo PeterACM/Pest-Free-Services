@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
   const interactivePests = [
     { id: 'borer', name: 'Wood-Borer', icon: Bug, desc: 'Licensed Dept. of Agriculture treatments. Assessment required to determine if alternative to fumigation is possible.', color: 'bg-emerald-600' },
     { id: 'termite', name: 'Termite', icon: ShieldAlert, desc: 'Termite on soil or Termite on structure barrier treatments.', color: 'bg-red-600' },
-    { id: 'cockroach', name: 'Roach Control', icon: Footprints, desc: 'Roach gel carries 3-month warranty with client cleanliness partnership.', color: 'bg-emerald-700' },
+    { id: 'cockroach', name: 'Roach Control', icon: Footprints, desc: 'High-performance roach gel treatment with client cleanliness partnership.', color: 'bg-emerald-700' },
     { id: 'rodent', name: 'Rodent Control', icon: ShieldCheck, desc: 'Massive demand. Secure baiting & entry proofing for rats and mice.', color: 'bg-emerald-800' },
     { id: 'timber', name: 'Wood Replacement', icon: Wrench, desc: 'We dispatch trusted sub-contractors for roof structures, doors, windows & floors.', color: 'bg-amber-700' },
   ];
@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-emerald-100 leading-relaxed max-w-2xl font-normal">
-              Specializing in registered Wood-Borer control, Termite treatment (soil or structure), Roach gel with a 3-month warranty, and Rodent control. Free maintenance quotes & compulsory on-site property assessments.
+              Specializing in registered Wood-Borer control, Termite treatment (soil or structure), targeted Roach gel control, and Rodent control. Compulsory on-site property assessments.
             </p>
 
             {/* Interactive Pest Subject Matter Selector Icons */}
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToServices,
                 className="flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-base font-black text-white bg-red-700 hover:bg-red-800 border border-red-500 shadow-xl shadow-red-950/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Calendar className="w-5 h-5" />
-                <span>Request Assessment / Free Maintenance Quote</span>
+                <span>Request On-Site Property Assessment</span>
               </button>
 
               <a

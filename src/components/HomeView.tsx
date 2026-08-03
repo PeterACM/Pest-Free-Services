@@ -112,10 +112,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   </td>
                 </tr>
                 <tr className="hover:bg-emerald-50/50">
-                  <td className="p-4 font-extrabold text-slate-900">Cockroach Control Guarantee</td>
+                  <td className="p-4 font-extrabold text-slate-900">Cockroach Control Approach</td>
                   <td className="p-4 bg-emerald-100 text-emerald-950 font-black flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
-                    3-Month Warranty + Client Cleanliness Partnership
+                    Targeted Gel Baiting + Client Cleanliness Partnership
                   </td>
                   <td className="p-4 bg-slate-50 text-slate-700 flex items-center gap-2">
                     <XCircle className="w-5 h-5 text-slate-400 shrink-0" />
@@ -277,7 +277,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold text-slate-200">
                 <div className="p-3 bg-slate-900 rounded-xl border border-emerald-800 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span>Roach Gel 3-Month Warranty</span>
+                  <span>Targeted Roach Gel Application</span>
                 </div>
                 <div className="p-3 bg-slate-900 rounded-xl border border-emerald-800 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
@@ -285,7 +285,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
                 <div className="p-3 bg-slate-900 rounded-xl border border-emerald-800 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span>Free Maintenance Quotes</span>
+                  <span>On-Site Property Assessment</span>
                 </div>
                 <div className="p-3 bg-slate-900 rounded-xl border border-emerald-800 flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />

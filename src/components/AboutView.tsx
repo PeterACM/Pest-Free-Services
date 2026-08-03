@@ -160,16 +160,16 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-              Our Core Guarantees & Operating Principles
+              Our Core Service & Operating Principles
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 rounded-2xl bg-white text-slate-900 border-2 border-emerald-300 shadow-xl space-y-3">
               <Award className="w-8 h-8 text-emerald-700" />
-              <h3 className="text-lg font-black text-slate-900">3-Month Roach Gel Warranty</h3>
+              <h3 className="text-lg font-black text-slate-900">Roach Gel Cleanliness Partnership</h3>
               <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                Our cockroach gel applications carry a 3-month warranty. We partner with residents to eliminate harborage attractions like cardboard boxes and old newspapers.
+                Our cockroach gel applications provide targeted, professional control. We partner with residents to eliminate harborage attractions like cardboard boxes and old newspapers.
               </p>
             </div>
 
@@ -193,9 +193,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
           <div className="mt-12 text-center">
             <button
               onClick={onOpenBooking}
-              className="px-8 py-4 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-sm shadow-2xl transition-all border border-red-500"
+              className="px-8 py-4 rounded-xl bg-red-700 hover:bg-red-800 text-white font-black text-sm shadow-2xl transition-all border border-red-500 cursor-pointer"
             >
-              Request Assessment / Free Maintenance Quote
+              Request On-Site Property Assessment
             </button>
           </div>
         </div>
