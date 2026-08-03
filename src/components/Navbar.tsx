@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { PhoneCall, Menu, X, ShieldCheck, Phone } from 'lucide-react';
+import pestLogo from '../assets/images/pest.png';
 
 interface NavbarProps {
   currentPage: PageView;
@@ -39,17 +40,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenB
           aria-label="Pest Free Services Home"
         >
           <img 
-            src="/pest.png" 
+            src={pestLogo} 
             alt="Pest Free Services Logo" 
             className="h-16 sm:h-20 lg:h-22 max-h-24 w-auto object-contain transition-transform group-hover:scale-105"
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;
               if (!target.dataset.triedFallback1) {
                 target.dataset.triedFallback1 = 'true';
-                target.src = '/Pestfreelogo.png';
-              } else if (!target.dataset.triedFallback2) {
-                target.dataset.triedFallback2 = 'true';
-                target.src = '/pestfreelogo.png';
+                target.src = '/pest.png';
               }
             }}
           />

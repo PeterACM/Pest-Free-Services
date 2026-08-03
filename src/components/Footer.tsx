@@ -2,6 +2,7 @@ import React from 'react';
 import { PageView } from '../types';
 import { BUSINESS_INFO } from '../data/pestData';
 import { MapPin, ShieldCheck } from 'lucide-react';
+import pestLogo from '../assets/images/pest.png';
 
 interface FooterProps {
   onNavigate: (page: PageView) => void;
@@ -17,17 +18,14 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* Brand Logo Header */}
           <div className="flex items-center shrink-0">
             <img 
-              src="/pest.png" 
+              src={pestLogo} 
               alt="Pest Free Services Logo" 
               className="h-16 sm:h-20 w-auto bg-white p-1.5 rounded-xl shadow-md border border-emerald-400 object-contain"
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;
                 if (!target.dataset.triedFallback1) {
                   target.dataset.triedFallback1 = 'true';
-                  target.src = '/Pestfreelogo.png';
-                } else if (!target.dataset.triedFallback2) {
-                  target.dataset.triedFallback2 = 'true';
-                  target.src = '/pestfreelogo.png';
+                  target.src = '/pest.png';
                 }
               }}
             />
